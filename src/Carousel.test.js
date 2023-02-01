@@ -33,6 +33,9 @@ it("works when you click on the right arrow", function() {
 it("works when you click on the left arrow", ()=>{
   const {queryByTestId, queryByAltText} = render(<Carousel />)
 
+  const rightArrow = queryByTestId("right-arrow");
+  fireEvent.click(rightArrow);
+
   expect(queryByAltText("Photo by Pratik Patel on Unsplash")).toBeInTheDocument();
   expect(queryByAltText("Photo by Richard Pasquarella on Unsplash")).not.toBeInTheDocument();
 
